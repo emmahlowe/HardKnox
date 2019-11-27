@@ -1,0 +1,63 @@
+﻿@model IEnumerable<HardKnock.Models.Student_Majors>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_EnrollmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_GPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Major_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Major_Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_EnrollmentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_GPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Major_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Major_Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Student_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Student_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Student_ID })
+        </td>
+    </tr>
+}
+
+</table>

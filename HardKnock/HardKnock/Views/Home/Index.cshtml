@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>School of Hard Knox</h1>
+    <p class="lead">Where we teach your student to Cowboy Up!</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.ActionLink("Add Student", "AddStudent", "Home", new { firstname = "Greg", lastname = "Anderson" }, null)
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("View Student", "Index", "Student", null, null)
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("View Majors", "Index", "Majors", null, null)
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Add Major", "Create", "Majors", null, null)
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
