@@ -85,5 +85,25 @@ namespace HardKnock.Controllers
             }
             return RedirectToAction("Index", "Student");
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create([Bind(Include = "Student_ID, Student_FirstName, Student_LastName, Student_EnrollmentDate, Student_GPA, Major_ID")] Student students)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(students).State = EntityState.Added;
+                db.SaveChanges();
+                return RedirectToAction("Index", "Student");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
